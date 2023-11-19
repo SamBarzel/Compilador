@@ -190,6 +190,14 @@ public class Compilador extends javax.swing.JFrame {
                9, "ERROR Sintactico {}: Falta el parentesis que cierra en la funcion [#,%]");
        gramatica.initialLineColumn();
        
+       gramatica.group("SENTENCIA_COMP", " PARENTESIS_A (VALOR | PARAMETROS) PARENTESIS_C LLAVE_A (VALOR | PARAMETROS | FUNCION_COMP) LLAVE_C", true,
+               35, "ERROR Sintactico {}: Falta la sentencia if [#,%]");
+       gramatica.initialLineColumn();
+       
+       gramatica.group("SENTENCIAF_COMP", " LLAVE_A (VALOR | PARAMETROS | FUNCION_COMP) LLAVE_C ", true,
+               36, "ERROR Sintactico {}: Falta la sentencia else [#,%]");
+       gramatica.initialLineColumn();
+       
        gramatica.group("SENTENCIA_COMP", "SENTENCIA PARENTESIS_A (VALOR | PARAMETROS) ", true,
                28, "ERROR Sintactico {}: Falta alguna llave en la sentencia [#,%]");
        gramatica.initialLineColumn();
